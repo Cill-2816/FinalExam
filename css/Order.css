@@ -107,13 +107,11 @@
 .TotalTop {
     width: 90%;
     display: flex;
-    background-color: aqua;
 }
 
 .TopL {
     width: 124.7px;
     float: left;
-    background-color: aquamarine;
 }
 
 .Cong {
@@ -127,7 +125,6 @@
     float: left;
     width: 95%;
     display: flex;
-    background-color: bisque;
 }
 
 .TotalLeft {
@@ -209,31 +206,25 @@ hr {
 
 
 .Bottom {
-    width: 1247px;
+    width: 100%;
     clear: both;
     display: flex;
     justify-content: space-between;
-    background-color: aqua;
 }
 
 .BottomLeft {
-    background-color: blueviolet;
     width: 623.5px;
     float: left;
-    height: 500px;
 }
 
 .BottomRight {
     float: left;
-    background-color: rgb(28, 198, 102);
     width: 623.5px;
-    height: 500px;
 }
 
 .VipTop {
     text-align: center;
     align-items: center;
-    background-color: blue;
     height: 60px;
     width: 623.5px;
 }
@@ -244,6 +235,12 @@ hr {
     margin-top: 20px;
 }
 
+.Vip1 {
+    width: 400px;
+    height: 110px;
+    margin-top: 10px;
+}
+
 .VipBottom button{
     width: 50px;
     height: 40px;
@@ -252,15 +249,11 @@ hr {
 .VipBottom {
     text-align: center;
     align-items: center;
-    background-color: yellow;
     height: 60px;
     width: 623.5px;
 }
 
 .VipMid {
-    text-align: center;
-    align-items: center;
-    background-color: brown;
     display: flex;
     width: 523.5px;
     height: 130px;
@@ -271,8 +264,23 @@ hr {
     width: 60px;
 }
 
+.VipMidLeft button {
+    width: 40px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
 .VipMidRight {
     width: 60px;
+}
+
+.VipMidRight button {
+    width: 40px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .VipMidMid {
