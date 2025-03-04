@@ -213,13 +213,13 @@ hr {
 }
 
 .BottomLeft {
-    width: 623.5px;
+    width: 50%;
     float: left;
 }
 
 .BottomRight {
     float: left;
-    width: 623.5px;
+    width: 50%;
 }
 
 .VipTop {
