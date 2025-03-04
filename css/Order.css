@@ -149,43 +149,40 @@
 }
 
 .Ga {
-    top: 400px;
-    width: 150px;
-    margin-left: 240px;
-    position: fixed;    
+    top: 70%;
+    width: 14%;
+    margin-left: 17%;
+    position: fixed;      
 }
-
 hr { 
     width: 100%;          
 }
 
 .MinTop {
     width: 100%;
-    height: 250px;
     text-align: center;
     align-items: center;
 }
 
 .MinBottom {
     width: 100%;
-    height: 250px;
     text-align: center;
     align-items: center;
 }
 
 .MiniTop {
     width: 100%;
-    height: 60px;
+    height: 25%;
 }
 
 .MiniMid {
     width: 100%;
-    height: 130px;
+    height: 50%;
 }
 
 .MiniBottom {
     width: 100%;
-    height: 60px;
+    height: 25%;
 }
 
 .MiniTop button {
