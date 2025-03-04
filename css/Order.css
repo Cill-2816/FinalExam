@@ -6,7 +6,9 @@
 }
 
 .container {
-    width: 1247px;
+    width: 96vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
 }
 
 .HD {
@@ -34,7 +36,7 @@
 .Login {
     width: 15%;
     text-decoration: none;
-    padding: 10px;
+    padding: 0.8%;
     font-size: 18px;
     text-align: center;
     
@@ -64,7 +66,7 @@
 .navMenu {
     display: flex;
     text-align: center;
-    padding: 10px;
+    padding: 2%;
     gap: 25%;
     margin-left: 15%;
 }
@@ -89,7 +91,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 838px) {
+@media (max-width: 820px) {
     .Menu {
         display: none; 
     }
@@ -105,49 +107,45 @@
 .TotalTop {
     width: 90%;
     display: flex;
-    height: 500px;
+    background-color: aqua;
 }
 
 .TopL {
     width: 124.7px;
-    height: 500px;
     float: left;
+    background-color: aquamarine;
 }
 
 .Cong {
-    width: 30px;
-    height: 200px;
+    width: 15%;
+    height: 40%;
     margin-top: 150px;
-    background-color: aqua;
+    background-color: rgb(28, 133, 133);
 }
 
 .Top {
     float: left;
     width: 95%;
     display: flex;
-    height: 500px;
+    background-color: bisque;
 }
 
 .TotalLeft {
     width: 25%;
     float: left;
-    height: 500px;
 }
 .MDL {
     width: 25%;
     float: left;
-    height: 500px;
 }
 .MiddleRight {
     width: 25%;
     float: left;
-    height: 500px;
 }
 
 .TotalRight {
     float: left;
     width: 25%;
-    height: 500px;
 }
 
 .Ga {
