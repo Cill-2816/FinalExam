@@ -185,12 +185,13 @@ hr {
 .MiniTop button {
     width: 50px;
     height: 40px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .MiniBottom button {
     width: 50px;
     height: 40px;
+    margin-top: 10px;
 }
 
 .Ghe2 {
