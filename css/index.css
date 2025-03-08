@@ -364,7 +364,6 @@ body {
 @media (max-width: 480px) {
     .HD {
         flex-direction: column;
-        text-align: center;
     }
     
     .Name,
