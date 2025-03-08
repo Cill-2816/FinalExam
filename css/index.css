@@ -134,6 +134,10 @@ hr {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+.bottom-right {
+    flex: 0.95;
+}
+
 .bottom-left p {
     margin: 15px 0;
     color: #555;
@@ -212,6 +216,127 @@ body {
 
 .navMenu a:hover::after {
     width: 100%;
+}
+
+.contact-info {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contact-info h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #46c65f;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.contact-item i {
+    font-size: 18px;
+    color: #46c65f;
+    margin-right: 15px;
+    width: 20px;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #555;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    color: #46c65f;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #46c65f;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .contact-info h3 {
+        font-size: 18px;
+    }
+    
+    .contact-item {
+        font-size: 14px;
+    }
+    
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Bottom {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .bottom-left,
+    .bottom-right {
+        width: auto;
+        margin: 0;
+    }
+    
+    .bottom-left {
+        padding: 15px;
+    }
+    
+    .bottom-left p {
+        padding: 15px;
+        margin: 10px 0;
+    }
+    
+    .contact-info {
+        margin: 0;
+        padding: 15px;
+    }
+
+    .DC {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Bottom {
+        padding: 20px;
+    }
+    
+    .bottom-left,
+    .bottom-right {
+        padding: 15px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -313,13 +438,16 @@ html {
         display: inline-block;
     }
 }
-@media (max-width: 1024px) {
+
+@media (max-width: 854px) {
 
     .TotalRight img:nth-child(5) {
         display: inline-block;
     }
 }
-@media (max-width: 820px) {
+
+
+@media (max-width: 768px) {
     .Menu {
         display: none; 
     }
@@ -331,170 +459,65 @@ html {
         display: none;
     }
 
-    .TotalRight img:nth-child(6) {
-        display: inline-block;
+    .TotalRight {
+        display: none;  
     }
     
 }
-@media (max-width: 614px) {
-    .TotalRight img:nth-child(7) {
-        display: inline-block;
-    }
-}
-@media (max-width: 537px) {
-    .TotalRight img:nth-child(8) {
-        display: inline-block;
-    }
 
-    .DC {
-        margin-top: 20px;
-    }
-}
-@media (max-width: 500px) {
-    .TotalRight img:nth-child(9) {
-        display: inline-block;
-    }
-    
-}
-@media (max-width: 458px) {
-    .TotalRight img:nth-child(10) {
-        display: inline-block;
-    }
-}
 @media (max-width: 430px) {
-
-    .TotalRight img:nth-child(12) {
-        display: inline-block;
+    .Bottom {
+        padding: 10px;
+        gap: 10px;
     }
 
-    .DC {
-        margin-top: 20px;
-    }
-}
-@media (max-width: 412px) {
-
-    .TotalRight img:nth-child(13) {
-        display: inline-block;
-    }
-}
-@media (max-width: 390px) {
-
-    .TotalRight img:nth-child(13) {
-        display: none;
+    .bottom-left,
+    .bottom-right {
+        padding: 10px;
+        width: calc(100% - 20px);
     }
 
-    .TotalRight img:nth-child(11) {
-        display: inline-block;
-    }
-    
-}
-@media (max-width: 376px) {
-    .TotalRight img:nth-child(14) {
-        display: inline-block;
-    }
-
-}
-
-.contact-info {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.contact-info h3 {
-    color: #333;
-    font-size: 20px;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #46c65f;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin: 12px 0;
-}
-
-.contact-item i {
-    font-size: 18px;
-    color: #46c65f;
-    margin-right: 15px;
-    width: 20px;
-}
-
-.contact-item p {
-    margin: 0;
-    color: #555;
-}
-
-.social-media {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #f8f9fa;
-    color: #46c65f;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    background-color: #46c65f;
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-    .contact-info h3 {
-        font-size: 18px;
-    }
-    
-    .contact-item {
+    .bottom-left p {
+        padding: 12px;
+        margin: 8px 0;
         font-size: 14px;
     }
-    
-    .social-link {
-        width: 35px;
-        height: 35px;
-    }
-}
 
-@media (max-width: 768px) {
-    .Bottom {
-        flex-direction: column;
-    }
-    
-    .bottom-left,
-    .bottom-right {
-        width: 100%;
-    }
-    
     .contact-info {
-        margin: 0;
+        padding: 12px;
+        min-height: 0;
     }
-}
 
-@media (max-width: 480px) {
-    .Bottom {
-        padding: 20px;
+    .contact-info h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
     }
-    
-    .bottom-left,
-    .bottom-right {
-        padding: 15px;
+
+    .contact-item {
+        margin: 6px 0;
+    }
+
+    .contact-item i {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .contact-item p {
+        font-size: 14px;
+    }
+
+    .social-media {
+        margin-top: 12px;
+        padding-top: 8px;
+    }
+
+    .social-link {
+        width: 32px;
+        height: 32px;
+    }
+
+    .DC {
+        margin-top: 8px;
     }
 }
