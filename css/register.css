@@ -1,0 +1,123 @@
+@import url('./index.css');
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+}
+
+.form-container {
+    width: 500px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.input-group {
+    display: grid;
+    gap: 20px;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.input-box input {
+    width: 81%;
+    padding: 15px 45px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #ff0066;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 102, 0.1);
+}
+
+.input-box input[type="date"] {
+    padding-right: 15px;
+}
+
+.terms, .newsletter {
+    margin: 20px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.terms a {
+    color: #ff0066;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.terms input[type="checkbox"],
+.newsletter input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff0066, #ff6b6b);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px 0;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 102, 0.3);
+}
+
+.login-link {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #ff0066;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .input-box input {
+        padding: 12px 40px;
+    }
+
+    .register-btn {
+        padding: 12px;
+    }
+}
