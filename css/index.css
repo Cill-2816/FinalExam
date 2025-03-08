@@ -452,6 +452,10 @@ html {
     .Login {
         display: none;
     }
+
+    .TotalRight {
+        display: none;
+    }   
     
 }
 
@@ -509,5 +513,115 @@ html {
 
     .DC {
         margin-top: 8px;
+    }
+
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 5px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 270px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1001;
+    padding-top: 80px;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu .navMenu {
+    flex-direction: column;
+    margin: 0;
+    padding: 20px;
+    gap: 25px;
+}
+
+.mobile-menu .navMenu a {
+    opacity: 1;
+    font-size: 18px;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu .mobile-login {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hamburger Animation */
+.hamburger.active span:first-child {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* Media Query cho Mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .Menu {
+        display: none;
+    }
+
+    .mobile-menu .navMenu {
+        display: flex;
     }
 }
