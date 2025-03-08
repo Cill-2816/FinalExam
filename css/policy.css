@@ -1,0 +1,162 @@
+.policy-wrapper {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.policy-title {
+    text-align: center;
+    color: #e31837;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.membership-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.tier-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+}
+
+.tier-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid;
+}
+
+.tier-header i {
+    font-size: 2em;
+}
+
+.gold {
+    border-top: 5px solid #FFD700;
+}
+
+.gold .tier-header {
+    border-bottom-color: #FFD700;
+}
+
+.gold i {
+    color: #FFD700;
+}
+
+.silver {
+    border-top: 5px solid #C0C0C0;
+}
+
+.silver .tier-header {
+    border-bottom-color: #C0C0C0;
+}
+
+.silver i {
+    color: #C0C0C0;
+}
+
+.bronze {
+    border-top: 5px solid #CD7F32;
+}
+
+.bronze .tier-header {
+    border-bottom-color: #CD7F32;
+}
+
+.bronze i {
+    color: #CD7F32;
+}
+
+.tier-benefits h3 {
+    color: #333;
+    margin: 15px 0 10px;
+}
+
+.tier-benefits ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tier-benefits li {
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.tier-benefits li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #e31837;
+}
+
+.special-offers {
+    margin-top: 50px;
+}
+
+.special-offers h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.offer-card {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+}
+
+.offer-card i {
+    font-size: 2.5em;
+    color: #e31837;
+    margin-bottom: 15px;
+}
+
+.offer-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .policy-wrapper {
+        padding: 20px 10px;
+    }
+
+    .policy-title {
+        font-size: 2em;
+    }
+
+    .membership-tiers {
+        grid-template-columns: 1fr;
+    }
+
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+}
