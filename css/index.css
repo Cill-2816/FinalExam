@@ -55,6 +55,7 @@
     display: flex;
     width: 45%;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .navMenu {
@@ -195,7 +196,7 @@ body {
 
 .navMenu {
     margin-left: 0;
-    gap: 40px;
+    gap: 40px;  
 }
 
 .navMenu a {
@@ -205,7 +206,6 @@ body {
 
 .navMenu a::after {
     content: '';
-    position: absolute;
     width: 0;
     height: 2px;
     bottom: -5px;
@@ -395,14 +395,6 @@ html {
     opacity: 1;
 }
 
-.GaRanIMG {
-    transition: transform 0.3s ease;
-}
-
-.GaRanIMG:hover {
-    transform: scale(1.05);
-}
-
 .ICT {
     float: left;
 }
@@ -438,10 +430,13 @@ html {
     }
 }
 
-@media (max-width: 854px) {
+@media (max-width: 912px) {
 
     .TotalRight img:nth-child(5) {
         display: inline-block;
+    }
+    .GaRanIMG {
+        display: none;
     }
 }
 
@@ -456,10 +451,6 @@ html {
 
     .Login {
         display: none;
-    }
-
-    .TotalRight {
-        display: none;  
     }
     
 }
