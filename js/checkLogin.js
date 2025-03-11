@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Cập nhật UI cho mobile menu
             if (mobileLoginLink) {
+                // Nếu đã đăng nhập, thay thế link đăng nhập bằng thông tin user
+                mobileLoginLink.href = '#'; // Xóa link đến trang login
                 mobileLoginLink.innerHTML = `
                     <div class="mobile-user-info">
                         <span>Xin chào, ${userDetails.name}</span>
@@ -102,15 +104,35 @@ document.addEventListener('DOMContentLoaded', () => {
                             <i class="fas fa-crown"></i>
                             <span>${memberTierName}</span>
                         </div>
+                        <div class="mobile-points">
+                            <i class="fas fa-star"></i>
+                            <span>Điểm tích lũy: ${points}</span>
+                        </div>
+                        <div class="mobile-total-spent">
+                            <i class="fas fa-coins"></i>
+                            <span>Tổng chi tiêu: ${formatCurrency(totalSpent)}</span>
+                        </div>
                         <button onclick="logout()" class="mobile-logout-btn">
                             <i class="fas fa-sign-out-alt"></i>
+                            Đăng xuất
                         </button>
                     </div>
                 `;
                 mobileLoginLink.style.display = 'flex';
                 mobileLoginLink.style.justifyContent = 'space-between';
                 mobileLoginLink.style.alignItems = 'center';
+                
+                // Ngăn chặn hành vi mặc định của link
+                mobileLoginLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                });
             }
+        }
+    } else {
+        // Nếu chưa đăng nhập, giữ nguyên link đăng nhập
+        if (mobileLoginLink) {
+            mobileLoginLink.href = 'login.html';
+            mobileLoginLink.innerHTML = 'Đăng nhập <i class="fas fa-user"></i>';
         }
     }
 
@@ -196,13 +218,14 @@ style.textContent = `
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
+        padding: 15px;
     }
 
-    .mobile-member-tier {
-        font-size: 14px;
+    .mobile-user-info > div {
         display: flex;
         align-items: center;
+        gap: 10px;
         gap: 8px;
     }
 
