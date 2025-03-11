@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - Chicken Duno</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/pay.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header giống các trang khác -->
+        <div class="Header">
+            <Header class="HD">
+                <div class="Name">
+                    <a href="./index.html" class="CD">Chicken Duno</a>
+                </div>
+        
+                <div class="Menu">
+                    <nav class="navMenu">
+                        <a href="./index.html">Home</a>
+                        <a href="./menu.html">Menu</a>
+                        <a href="./policy.html">Policy</a>
+                    </nav>
+                </div>
+        
+                <div class="Cart">
+                    <a href="./pay.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+        
+                <div class="Login">
+                    <a href="./login.html" class="LG">Log In <i class="fas fa-user"></i></a>
+                </div>
+            </Header>
+        </div>
+
+        <div class="payment-container">
+            <div class="delivery-options">
+                <h2>Phương thức nhận hàng</h2>
+                <div class="option-buttons">
+                    <button class="option-btn active" data-option="delivery">
+                        <i class="fas fa-motorcycle"></i> Giao hàng
+                    </button>
+                    <button class="option-btn" data-option="pickup">
+                        <i class="fas fa-store"></i> Đặt bàn
+                    </button>
+                </div>
+            </div>
+
+            <div class="order-details">
+                <div class="cart-items">
+                    <h3>Giỏ hàng của bạn</h3>
+                    <div class="cart-list">
+                        <!-- Cart items will be inserted here by JavaScript -->
+                    </div>
+                    <div class="cart-summary">
+                        <div class="subtotal">
+                            <span>Tạm tính:</span>
+                            <span class="amount">0đ</span>
+                        </div>
+                        <div class="shipping">
+                            <span>Phí giao hàng:</span>
+                            <span class="amount">15.000đ</span>
+                        </div>
+                        <div class="total">
+                            <span>Tổng cộng:</span>
+                            <span class="amount">0đ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-info">
+                    <h3>Thông tin đặt hàng</h3>
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Họ và tên" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Số điện thoại" required>
+                        </div>
+                        <div class="form-group delivery-info">
+                            <input type="text" placeholder="Địa chỉ giao hàng" required>
+                        </div>
+                        <div class="form-group pickup-info" style="display: none;">
+                            <div class="time-input-wrapper">
+                                <input type="time" id="reservationTime" 
+                                       min="11:00" max="21:00" 
+                                       step="1800" 
+                                       placeholder="Chọn thời gian"
+                                       required>
+                                <select id="timePresets" onchange="updateTimeInput(this.value)">
+                                    <option value="">Chọn thời gian có sẵn</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                </select>
+                            </div>
+                            <small class="time-note">Giờ hoạt động: 11:00 - 21:00</small>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Ghi chú đơn hàng"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="payment-methods">
+                    <h3>Phương thức thanh toán</h3>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cash" checked>
+                            <span class="radio-custom"></span>
+                            <i class="fas fa-money-bill-wave"></i>
+                            Tiền mặt
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card">
+                            <span class="radio-custom"></span>
+                            <i class="fas fa-credit-card"></i>
+                            Thẻ ngân hàng
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="momo">
+                            <span class="radio-custom"></span>
+                            <img src="./IMG/Momo.webp" alt="MoMo" style="width: 20px; height: 20px; margin-right: 8px;">
+                            Ví MoMo
+                        </label>
+                    </div>
+                </div>
+
+                <button class="order-button">
+                    Đặt hàng
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/hamburger.js"></script>
+    <script src="./js/checkLogin.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/pay.js"></script>
+</body>
+</html> 
