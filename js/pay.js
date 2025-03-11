@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateTotal(includeShipping) {
         const subtotal = parseFloat(subtotalAmount.textContent.replace(/[^\d]/g, '')) || 0;
         // Chỉ tính phí ship nếu giỏ hàng không trống và đang ở chế độ giao hàng
-        const shippingFee = (!isCartEmpty() && includeShipping) ? 15000 : 0;
+        const shippingFee = (!isCartEmpty() && includeShipping) ? 0 : 0;
         const total = subtotal + shippingFee;
         totalAmount.textContent = `${total.toLocaleString()}đ`;
     }
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ...formData,
             items: cart,
             total: parseFloat(totalAmount.textContent.replace(/[^\d]/g, '')),
-            shippingFee: formData.deliveryOption === 'delivery' ? 15000 : 0,
+            shippingFee: formData.deliveryOption === 'delivery' ? 0 : 0,
             orderDate: new Date().toISOString(),
             status: 'pending'
         };
