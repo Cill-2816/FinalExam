@@ -55,8 +55,48 @@ function checkExistingUser(email, phone) {
     );
 }
 
+// Hàm gửi email thông báo
+async function sendWelcomeEmail(userEmail, userName) {
+    try {
+        const response = await fetch("https://formspree.io/f/xdkeodwe", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: userEmail,
+                message: `
+Xin chào ${userName},
+
+Cảm ơn bạn đã đăng ký thành viên tại Chicken Duno!
+
+Bạn sẽ nhận được các thông tin ưu đãi đặc biệt qua email này.
+
+Thông tin tài khoản của bạn:
+- Tên: ${userName}
+- Email: ${userEmail}
+- Hạng thành viên: Thành viên Đồng
+- Điểm tích lũy: 0
+- Tổng chi tiêu: 0đ
+
+Trân trọng,
+Chicken Duno Team
+                `
+            }),
+        });
+
+        if (response.ok) {
+            console.log("Email sent successfully");
+        } else {
+            console.error("Failed to send email");
+        }
+    } catch (error) {
+        console.error("Error sending email:", error);
+    }
+}
+
 // Hàm xử lý đăng ký
-function handleRegister(event) {
+async function handleRegister(event) {
     event.preventDefault();
 
     // Lấy giá trị từ form
@@ -81,7 +121,7 @@ function handleRegister(event) {
         return;
     }
 
-    // Tạo user mới với điểm tích lũy
+    // Tạo user mới
     const newUser = {
         name,
         email,
@@ -90,21 +130,42 @@ function handleRegister(event) {
         address,
         password,
         newsletter,
-        points: 0, // Thêm điểm tích lũy, mặc định là 0
-        totalSpent: 0, // Thêm tổng số tiền đã chi tiêu
-        membershipLevel: 'Bronze', // Thêm cấp độ thành viên mặc định
+        points: 0,
+        totalSpent: 0,
+        membershipLevel: 'Bronze',
         createdAt: new Date().toISOString()
     };
 
-    // Lấy danh sách users hiện tại và thêm user mới
+    // Lưu user vào localStorage
     const users = JSON.parse(localStorage.getItem('users')) || [];
     users.push(newUser);
-
-    // Lưu vào localStorage
     localStorage.setItem('users', JSON.stringify(users));
 
-    // Thông báo thành công
-    alert('Đăng ký thành công!');
+    // Nếu user đăng ký nhận thông báo qua email
+    if (newsletter) {
+        try {
+            // Hiển thị loading
+            const registerBtn = form.querySelector('.register-btn');
+            const originalText = registerBtn.textContent;
+            registerBtn.textContent = 'Đang xử lý...';
+            registerBtn.disabled = true;
+
+            // Gửi email
+            await sendWelcomeEmail(email, name);
+
+            // Khôi phục nút
+            registerBtn.textContent = originalText;
+            registerBtn.disabled = false;
+
+            // Thông báo thành công
+            alert('Đăng ký thành công! Vui lòng kiểm tra email của bạn.');
+        } catch (error) {
+            console.error('Lỗi khi gửi email:', error);
+            alert('Đăng ký thành công! Tuy nhiên có lỗi khi gửi email thông báo.');
+        }
+    } else {
+        alert('Đăng ký thành công!');
+    }
 
     // Chuyển đến trang đăng nhập
     window.location.href = 'login.html';

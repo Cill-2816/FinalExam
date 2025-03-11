@@ -76,10 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Hàm cập nhật tổng tiền
+    // Cập nhật hàm updateTotal
     function updateTotal(includeShipping) {
-        const subtotal = parseFloat(subtotalAmount.textContent.replace(/[^\d]/g, ''));
-        const shippingFee = includeShipping ? 15000 : 0;
+        const subtotal = parseFloat(subtotalAmount.textContent.replace(/[^\d]/g, '')) || 0;
+        // Chỉ tính phí ship nếu giỏ hàng không trống và đang ở chế độ giao hàng
+        const shippingFee = (!isCartEmpty() && includeShipping) ? 15000 : 0;
         const total = subtotal + shippingFee;
         totalAmount.textContent = `${total.toLocaleString()}đ`;
     }
@@ -132,17 +133,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (deliveryInfo) deliveryInfo.style.display = 'none';
             if (pickupInfo) pickupInfo.style.display = 'block';
             
-            // Ẩn phần phí ship
+            // Ẩn phần phí ship và cập nhật giá 0đ
             const shippingSection = document.querySelector('.shipping');
-            if (shippingSection) shippingSection.style.display = 'none';
+            if (shippingSection) {
+                shippingSection.style.display = 'none';
+                const shippingAmount = shippingSection.querySelector('.amount');
+                if (shippingAmount) shippingAmount.textContent = '0đ';
+            }
             
-            // Cập nhật nút đặt hàng
+            // Cập nhật nút đặt hàng và tổng tiền
             if (orderButton) {
                 orderButton.textContent = 'Đặt bàn';
             }
+            
+            // Cập nhật tổng tiền là 0đ
+            totalAmount.textContent = '0đ';
+            return; // Thoát khỏi hàm vì không cần tính toán thêm
         }
 
-        // Kiểm tra phương thức hiện tại để quyết định có tính phí ship hay không
+        // Nếu giỏ hàng không trống, kiểm tra phương thức hiện tại để tính phí ship
         const isDelivery = document.querySelector('.option-btn.active').dataset.option === 'delivery';
         updateTotal(isDelivery);
     }
@@ -161,8 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const minute = parseInt(time.split(':')[1]);
         
         // Kiểm tra thời gian trong giờ hoạt động
-        if (hour < 11 || (hour === 21 && minute > 0) || hour > 21) {
-            alert('Vui lòng chọn thời gian từ 11:00 đến 21:00');
+        if (hour < 10 || (hour === 22 && minute > 0) || hour > 22) {
+            alert('Vui lòng chọn thời gian từ 10:00 đến 22:00');
             this.value = '';
             return;
         }
@@ -186,13 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const deliveryOption = document.querySelector('.option-btn.active').dataset.option;
-
-        // Nếu giỏ hàng trống và không phải đặt bàn
-        if (isCartEmpty() && deliveryOption === 'delivery') {
-            alert('Giỏ hàng của bạn đang trống!');
-            return;
-        }
-
         // Lấy thông tin từ form
         const formData = {
             name: orderForm.querySelector('input[placeholder="Họ và tên"]').value,
