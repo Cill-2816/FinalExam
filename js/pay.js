@@ -244,7 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 users[userIndex] = {
                     ...users[userIndex],
                     totalSpent: (users[userIndex].totalSpent || 0) + orderTotal,
-                    points: (users[userIndex].points || 0) + pointsEarned
+                    points: (users[userIndex].points || 0) + pointsEarned,
+                    savedCart: {} // Xóa giỏ hàng đã lưu sau khi đặt hàng thành công
                 };
 
                 // Lưu lại vào localStorage

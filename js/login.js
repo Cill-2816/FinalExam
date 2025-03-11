@@ -14,27 +14,39 @@ function handleLogin(event) {
     const user = users.find(u => u.email === email && u.password === password);
 
     if (user) {
-        // Lưu thông tin đăng nhập
-        const loggedInUser = {
-            username: user.username,
-            email: user.email,
-            isLoggedIn: true,
-            loginTime: new Date().toISOString(),
-            rememberMe: rememberMe
-        };
-        
-        // Lưu session người dùng
-        localStorage.setItem('currentUser', JSON.stringify(loggedInUser));
-
-        // Thông báo thành công và chuyển hướng
-        alert('Đăng nhập thành công!');
-        window.location.href = 'index.html';
+        handleSuccessfulLogin(user);
     } else {
         // Thông báo lỗi
         alert('Email hoặc mật khẩu không chính xác!');
     }
 }
 
+// Thêm vào phần xử lý đăng nhập thành công
+function handleSuccessfulLogin(user) {
+    // Lưu thông tin đăng nhập
+    localStorage.setItem('currentUser', JSON.stringify({
+        email: user.email,
+        isLoggedIn: true
+    }));
+
+    // Khôi phục giỏ hàng đã lưu (nếu có)
+    if (user.savedCart && Object.keys(user.savedCart).length > 0) {
+        const currentCart = JSON.parse(localStorage.getItem('cart')) || {};
+        
+        // Hỏi người dùng có muốn khôi phục giỏ hàng cũ không
+        if (Object.keys(currentCart).length > 0) {
+            if (confirm('Bạn có muốn khôi phục giỏ hàng từ lần trước không?')) {
+                localStorage.setItem('cart', JSON.stringify(user.savedCart));
+            }
+        } else {
+            // Nếu giỏ hàng hiện tại trống, tự động khôi phục giỏ hàng cũ
+            localStorage.setItem('cart', JSON.stringify(user.savedCart));
+        }
+    }
+
+    // Chuyển hướng về trang chủ
+    window.location.href = 'index.html';
+}
 
 // Kiểm tra trạng thái đăng nhập
 function checkLoginStatus() {

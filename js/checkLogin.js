@@ -283,11 +283,42 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Hàm đăng xuất
+// Cập nhật hàm đăng xuất
 function logout() {
+    // Lưu giỏ hàng hiện tại vào thông tin user trước khi đăng xuất
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    
+    if (currentUser && currentUser.isLoggedIn) {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const userIndex = users.findIndex(user => user.email === currentUser.email);
+        
+        if (userIndex !== -1) {
+            // Lưu giỏ hàng vào thông tin user
+            users[userIndex].savedCart = cart;
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+    }
+
+    // Xóa thông tin đăng nhập và giỏ hàng
     localStorage.removeItem('currentUser');
-    window.location.reload(); // Tải lại trang sau khi đăng xuất
+    localStorage.removeItem('cart');
+    
+    // Chuyển về trang chủ
+    window.location.href = 'index.html';
 }
+
+// Thêm xử lý cho nút đăng xuất trên mobile
+document.querySelector('.mobile-logout-btn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    logout();
+});
+
+// Thêm xử lý cho nút đăng xuất trên desktop
+document.querySelector('.logout-btn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    logout();
+});
 
 // Thêm sự kiện click cho icon giỏ hàng
 document.querySelector('.cart-icon')?.addEventListener('click', (e) => {
