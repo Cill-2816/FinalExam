@@ -275,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem('cart');
         window.location.href = 'index.html';
     });
+    
 
     // Hiển thị giỏ hàng khi trang load
     displayCartItems();
