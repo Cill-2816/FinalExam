@@ -9,7 +9,7 @@
 }
 
 .category h2 {
-    color: #333;
+    color: var(--text-color);;
     font-size: 1.8em;
     margin-bottom: 25px;
     padding-bottom: 10px;
@@ -96,7 +96,7 @@
 }
 
 .cart-icon {
-    color: #333;
+    color: var(--text-color);
     font-size: 20px;
     text-decoration: none;
     position: relative;

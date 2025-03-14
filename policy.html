@@ -58,7 +58,7 @@
             <div class="membership-tiers">
                 <div class="tier-card gold">
                     <div class="tier-header">
-                        <h2>Thành Viên Vàng</h2>
+                        <h2 style="color: #1b1b1b;">Thành Viên Vàng</h2>
                         <i class="fas fa-crown"></i>
                     </div>
                     <div class="tier-benefits">
@@ -76,7 +76,7 @@
 
                 <div class="tier-card silver">
                     <div class="tier-header">
-                        <h2>Thành Viên Bạc</h2>
+                        <h2 style="color: #1b1b1b;">Thành Viên Bạc</h2>
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="tier-benefits">
@@ -93,7 +93,7 @@
 
                 <div class="tier-card bronze">
                     <div class="tier-header">
-                        <h2>Thành Viên Đồng</h2>
+                        <h2 style="color: #1b1b1b;">Thành Viên Đồng</h2>
                         <i class="fas fa-medal"></i>
                     </div>
                     <div class="tier-benefits">
@@ -110,7 +110,7 @@
             </div>
 
             <div class="special-offers">
-                <h2>Ưu Đãi Đặc Biệt</h2>
+                <h2 style="color: var(--text-color);">Ưu Đãi Đặc Biệt</h2>
                 <div class="offers-grid">
                     <div class="offer-card">
                         <i class="fas fa-birthday-cake"></i>
@@ -135,5 +135,33 @@
     </div>
     <script src="./js/hamburger.js"></script>
     <script src="./js/checkLogin.js"></script>
+    <button class="theme-switch" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeSwitch = document.querySelector('.theme-switch');
+        const icon = themeSwitch.querySelector('i');
+        
+        // Kiểm tra theme đã lưu
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        themeSwitch.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            // Cập nhật theme
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Cập nhật icon
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+    });
+    </script>
 </body>
 </html>

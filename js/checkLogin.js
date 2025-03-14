@@ -151,13 +151,15 @@ style.textContent = `
 
     .username {
         font-size: 16px;
-        color: #333;
+        color: var(--text-color);
+        font-weight: bold;
+        font-family: "Bookman",sans-serif;
     }
 
     .logout-btn, .mobile-logout-btn {
         background: none;
         border: none;
-        color: #333;
+        color: var(--text-color);
         cursor: pointer;
         padding: 5px;
         font-size: 16px;
@@ -170,7 +172,7 @@ style.textContent = `
 
     .mobile-menu .mobile-login {
         padding: 10px 15px;
-        color: #333;
+        color: var(--text-color);
         text-decoration: none;
         width: 100%;
         box-sizing: border-box;
@@ -178,13 +180,126 @@ style.textContent = `
 
     .mobile-menu .mobile-login span {
         font-size: 16px;
-        color: #333;
+        color: var(--text-color);
     }
 
+    .mobile-user-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+        color: var(--text-color);
+    }
+
+    .mobile-user-info > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text-color);
+    }
+
+    /* User Profile Dropdown Styles */
+    .user-profile {
+        position: relative;
+    }
+
+    .profile-trigger {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--text-color);
+    }
+
+    .profile-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 250px;
+        background: var(--card-background);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px var(--shadow-color);
+        padding: 15px;
+        display: none;
+        z-index: 1000;
+    }
+
+    .user-profile:hover .profile-dropdown {
+        display: block;
+    }
+
+    .profile-info {
+        padding: 10px 0;
+    }
+
+    .profile-info > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0;
+        color: var(--text-color);
+    }
+
+    .profile-dropdown .logout-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 8px 0;
+        color: #ff0000;
+        text-decoration: none;
+    }
+
+    .profile-dropdown .logout-btn:hover {
+        opacity: 0.8;
+    }
+
+    .dropdown-divider {
+        height: 1px;
+        background: var(--shadow-color);
+        margin: 10px 0;
+    }
+
+    /* Bottom Left Section */
+    .bottom-left {
+        flex: 1;
+        padding: 20px;
+        background-color: var(--card-background);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px var(--shadow-color);
+    }
+
+    .bottom-left p {
+        margin: 15px 0;
+        color: var(--text-color);
+        font-size: 16px;
+        padding: 20px;
+        background-color: var(--card-background);
+        border-radius: 8px;
+        border-left: 4px solid #46c65f;
+    }
+
+    /* Member Tier Colors - Keep these unchanged */
+    .mobile-member-tier.gold i {
+        color: #FFD700;
+    }
+
+    .mobile-member-tier.silver i {
+        color: #C0C0C0;
+    }
+
+    .mobile-member-tier.bronze i {
+        color: #CD7F32;
+    }
+
+    /* Cart Icon */
     .cart-icon {
         position: relative;
         display: inline-block;
         margin-right: 15px;
+        color: var(--text-color);
     }
 
     .cart-count {
@@ -212,96 +327,6 @@ style.textContent = `
         .cart-icon {
             margin-right: 10px;
         }
-    }
-
-    .mobile-user-info {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        padding: 15px;
-    }
-
-    .mobile-user-info > div {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        gap: 8px;
-    }
-
-    .mobile-member-tier.gold i {
-        color: #FFD700;
-    }
-
-    .mobile-member-tier.silver i {
-        color: #C0C0C0;
-    }
-
-    .mobile-member-tier.bronze i {
-        color: #CD7F32;
-    }
-
-    /* User Profile Dropdown Styles */
-    .user-profile {
-        position: relative;
-    }
-
-    .profile-trigger {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-        text-decoration: none;
-        color: #333;
-    }
-
-    .profile-dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 250px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        padding: 15px;
-        display: none;
-        z-index: 1000;
-    }
-
-    .user-profile:hover .profile-dropdown {
-        display: block;
-    }
-
-    .profile-info {
-        padding: 10px 0;
-    }
-
-    .profile-info > div {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 0;
-        color: #333;
-    }
-
-    .profile-dropdown .logout-btn {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        padding: 8px 0;
-        color: #ff0000;
-        text-decoration: none;
-    }
-
-    .profile-dropdown .logout-btn:hover {
-        opacity: 0.8;
-    }
-
-    .dropdown-divider {
-        height: 1px;
-        background: #eee;
-        margin: 10px 0;
     }
 `;
 document.head.appendChild(style);

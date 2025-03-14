@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cartList.innerHTML += `
                 <div class="cart-item">
-                    <img src="./IMG/Menu/${name.replace(/\s+/g, '')}.jpg" alt="${name}">
+                    <img src="./IMG/Menu/${name}.jpg" alt="${name}">
                     <div class="item-details">
                         <h4>${name}</h4>
                         <p>Số lượng: ${item.quantity}</p>

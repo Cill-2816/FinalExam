@@ -33,17 +33,18 @@
     padding: 0.8%;
     font-size: 18px;
     text-align: center;
-    
 }
 
 .LG {
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .LG i{
     margin-left: 5%;
     font-size: 20px;
+    color: var(--text-color);
 }
 
 .KT {
@@ -84,6 +85,7 @@
 .LG:hover{
     text-decoration: underline;
     cursor: pointer;
+    opacity: 0.8;
 }
 
 .TotalLeft {
@@ -166,6 +168,18 @@ hr {
     --secondary-color: #191825;
     --text-color: #333;
     --background-color: #f5f5f5;
+    --card-background: #fff;
+    --shadow-color: rgba(0,0,0,0.1);
+}
+
+/* Thêm theme tối */
+[data-theme="dark"] {
+    --primary-color: #46c65f;
+    --secondary-color: #fff;
+    --text-color: #fff;
+    --background-color: #1a1a1a;
+    --card-background: #2d2d2d;
+    --shadow-color: rgba(255,255,255,0.1);
 }
 
 body {
@@ -173,6 +187,7 @@ body {
     padding: 0;
     background-color: var(--background-color);
     overflow-x: hidden;
+    color: var(--text-color);
 }
 
 .container {
@@ -182,7 +197,7 @@ body {
 }
 
 .Header {
-    background-color: white;
+    background-color: var(--card-background);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -202,6 +217,7 @@ body {
 .navMenu a {
     position: relative;
     transition: all 0.3s ease;
+    color: var(--text-color);
 }
 
 .navMenu a::after {
@@ -220,15 +236,16 @@ body {
 
 .contact-info {
     flex: 1;
-    background-color: #fff;
+    background-color: var(--card-background);
     padding: 20px;
     border-radius: 8px;
     margin: 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    color: var(--text-color);
 }
 
 .contact-info h3 {
-    color: #333;
+    color: var(--text-color);
     font-size: 20px;
     margin-bottom: 15px;
     padding-bottom: 10px;
@@ -250,7 +267,7 @@ body {
 
 .contact-item p {
     margin: 0;
-    color: #555;
+    color: var(--text-color);
 }
 
 .social-media {
@@ -548,7 +565,7 @@ html {
     right: -280px;
     width: 270px;
     height: 100vh;
-    background-color: white;
+    background-color: var(--card-background);
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
     z-index: 1001;
@@ -573,6 +590,7 @@ html {
     width: 100%;
     text-align: left;
     border-bottom: 1px solid #eee;
+    color: var(--text-color);
 }
 
 .mobile-menu .mobile-login {
@@ -580,6 +598,11 @@ html {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--text-color);
+}
+
+.mobile-menu .mobile-login i {
+    color: var(--text-color);
 }
 
 /* Hamburger Animation */
@@ -676,7 +699,7 @@ html {
     top: 100%;
     right: 0;
     width: 250px;
-    background: white;
+    background: var(--card-background);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 15px;
@@ -697,7 +720,7 @@ html {
     align-items: center;
     gap: 10px;
     padding: 8px 0;
-    color: #333;
+    color: var(--text-color);
 }
 
 .profile-info i {
@@ -890,11 +913,6 @@ html {
         font-size: 18px;
     }
 
-    .social-link {
-        width: 50px;
-        height: 50px;
-    }
-
     /* Tăng kích thước cart icon */
     .cart-icon {
         font-size: 24px;
@@ -940,4 +958,33 @@ html {
     .contact-item p {
         font-size: 20px;
     }
+}
+
+/* Thêm style cho nút switch theme */
+.theme-switch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--card-background);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.theme-switch i {
+    font-size: 24px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.theme-switch:hover {
+    transform: scale(1.1);
 }

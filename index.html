@@ -69,19 +69,19 @@
     
         <div class="TotalRight">
             <div class="GaRan">
-                <img src="IMG/Menu/Menu1.jpg" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu2.webp" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu3.jpg" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu4.jpg" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu5.jpg" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu6.webp" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu7.webp" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu8.jpg" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu9.jpg" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu10.webp" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu11.webp" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu12.webp" alt="" class="GaRanIMG">
-                <img src="IMG/Menu/Menu13.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà nướng muối ớt.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà tắm nước sôi.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Cánh gà chiên mắm.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà tìm măng.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Mẹt gà.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà bóp chanh.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà hầm khoai tây.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà hấp cải thìa.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Phở gà.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà đen Tây Bắc.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà đen nướng.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Menu12.jpg" alt="" class="GaRanIMG">
+                <img src="IMG/Menu/Gà ác tiềm thuốc Bắc.jpg" alt="" class="GaRanIMG">
             </div>
             <div class="GaRanIMG">
                 <a href="./menu.html">
@@ -123,5 +123,33 @@
     
     <script src="./js/hamburger.js"></script>
     <script src="./js/checkLogin.js"></script>
+    <button class="theme-switch" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeSwitch = document.querySelector('.theme-switch');
+        const icon = themeSwitch.querySelector('i');
+        
+        // Kiểm tra theme đã lưu
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        themeSwitch.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            // Cập nhật theme
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Cập nhật icon
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+    });
+    </script>
 </body>
 </html>
