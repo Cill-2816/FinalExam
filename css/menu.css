@@ -52,6 +52,10 @@
     text-align: center;
 }
 
+.menu-content span {
+    color: #333;
+}
+
 .menu-content h3 {
     color: #333;
     font-size: 1.2em;
