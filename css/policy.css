@@ -1,4 +1,3 @@
-
 .policy-wrapper {
     padding: 40px 20px;
     max-width: 1200px;
@@ -159,5 +158,60 @@
 
     .offers-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Màn hình lớn (14 inch trở lên) */
+@media (min-width: 1366px) {
+    .policy-wrapper {
+        max-width: 1400px;
+        padding: 50px 30px;
+    }
+
+    .policy-title {
+        font-size: 3em;
+    }
+
+    .tier-card {
+        padding: 40px;
+    }
+
+    .tier-header i {
+        font-size: 2.5em;
+    }
+
+    .tier-benefits h3 {
+        font-size: 1.4em;
+    }
+
+    .tier-benefits li {
+        font-size: 1.1em;
+    }
+}
+
+/* Màn hình rất lớn (1920px trở lên) */
+@media (min-width: 1920px) {
+    .policy-wrapper {
+        max-width: 1800px;
+    }
+
+    .policy-title {
+        font-size: 3.5em;
+    }
+
+    .membership-tiers {
+        gap: 40px;
+    }
+
+    .tier-card {
+        padding: 50px;
+    }
+
+    .offer-card i {
+        font-size: 3em;
+    }
+
+    .offer-card h3 {
+        font-size: 1.5em;
     }
 }

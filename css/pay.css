@@ -254,3 +254,58 @@
         flex-direction: column;
     }
 }
+
+/* Màn hình lớn (14 inch trở lên) */
+@media (min-width: 1366px) {
+    .payment-container {
+        max-width: 1400px;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .cart-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .item-details h4 {
+        font-size: 1.2em;
+    }
+
+    .cart-summary {
+        font-size: 1.1em;
+    }
+
+    .total {
+        font-size: 1.3em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+}
+
+/* Màn hình rất lớn (1920px trở lên) */
+@media (min-width: 1920px) {
+    .payment-container {
+        max-width: 1800px;
+        padding: 40px;
+    }
+
+    .cart-item img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .order-button {
+        padding: 20px;
+        font-size: 1.3em;
+    }
+
+    .payment-option i {
+        font-size: 24px;
+    }
+}

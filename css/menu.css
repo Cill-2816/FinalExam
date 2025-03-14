@@ -197,3 +197,67 @@
         margin: 0 auto;
     }
 }
+
+/* Màn hình lớn (14 inch trở lên) */
+@media (min-width: 1366px) {
+    .menu-wrapper {
+        max-width: 1400px;
+        padding: 50px 30px;
+    }
+
+    .menu-grid {
+        gap: 40px;
+    }
+
+    .menu-item img {
+        height: 250px;
+    }
+
+    .menu-content h3 {
+        font-size: 1.4em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .price {
+        font-size: 1.5em;
+    }
+
+    .order-btn {
+        padding: 12px 30px;
+        font-size: 1.1em;
+    }
+}
+
+/* Màn hình rất lớn (1920px trở lên) */
+@media (min-width: 1920px) {
+    .menu-wrapper {
+        max-width: 1800px;
+    }
+
+    .category h2 {
+        font-size: 2.2em;
+    }
+
+    .menu-item img {
+        height: 300px;
+    }
+
+    .menu-content {
+        padding: 25px;
+    }
+
+    .menu-content h3 {
+        font-size: 1.6em;
+    }
+
+    .description {
+        font-size: 1.1em;
+    }
+
+    .price {
+        font-size: 1.7em;
+    }
+}
