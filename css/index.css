@@ -753,3 +753,191 @@ html {
         max-width: 250px;
     }
 }
+
+/* Màn hình lớn (14 inch trở lên - thường là 1366px trở lên) */
+@media (min-width: 1366px) {
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .Name {
+        font-size: 42px;
+        margin-left: 2%;
+    }
+
+    .Menu {
+        width: 50%;
+    }
+
+    .navMenu {
+        gap: 50px;
+    }
+
+    .navMenu a {
+        font-size: 20px;
+    }
+
+    /* Tăng kích thước profile dropdown */
+    .profile-dropdown {
+        width: 300px;
+        padding: 20px;
+    }
+
+    .profile-info > div {
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    .profile-info i {
+        font-size: 20px;
+    }
+
+    /* Tăng kích thước bottom section */
+    .Bottom {
+        padding: 2% 5%;
+        gap: 40px;
+    }
+
+    .bottom-left p {
+        font-size: 18px;
+        padding: 25px;
+    }
+
+    .contact-info h3 {
+        font-size: 24px;
+    }
+
+    .contact-item {
+        margin: 15px 0;
+    }
+
+    .contact-item i {
+        font-size: 22px;
+    }
+
+    .contact-item p {
+        font-size: 16px;
+    }
+
+    .social-link {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Màn hình rất lớn (1920px trở lên) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1800px;
+    }
+
+    .Name {
+        font-size: 48px;
+    }
+
+    .Menu {
+        width: 55%;
+    }
+
+    .navMenu {
+        gap: 60px;
+    }
+
+    .navMenu a {
+        font-size: 22px;
+    }
+
+    /* Tăng kích thước profile dropdown thêm nữa */
+    .profile-dropdown {
+        width: 350px;
+        padding: 25px;
+    }
+
+    .profile-info > div {
+        padding: 15px 0;
+        font-size: 18px;
+    }
+
+    .profile-info i {
+        font-size: 24px;
+    }
+
+    /* Tăng kích thước bottom section */
+    .Bottom {
+        padding: 3% 7%;
+        gap: 50px;
+    }
+
+    .bottom-left p {
+        font-size: 20px;
+        padding: 30px;
+    }
+
+    .contact-info h3 {
+        font-size: 28px;
+    }
+
+    .contact-item {
+        margin: 20px 0;
+    }
+
+    .contact-item i {
+        font-size: 24px;
+    }
+
+    .contact-item p {
+        font-size: 18px;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Tăng kích thước cart icon */
+    .cart-icon {
+        font-size: 24px;
+    }
+
+    .cart-count {
+        font-size: 14px;
+        min-width: 20px;
+        padding: 3px 8px;
+    }
+}
+
+/* Màn hình siêu lớn (2560px trở lên - 4K) */
+@media (min-width: 2560px) {
+    .container {
+        max-width: 2400px;
+    }
+
+    .Name {
+        font-size: 54px;
+    }
+
+    .navMenu a {
+        font-size: 24px;
+    }
+
+    .profile-dropdown {
+        width: 400px;
+    }
+
+    .profile-info > div {
+        font-size: 20px;
+    }
+
+    .bottom-left p {
+        font-size: 22px;
+    }
+
+    .contact-info h3 {
+        font-size: 32px;
+    }
+
+    .contact-item p {
+        font-size: 20px;
+    }
+}
