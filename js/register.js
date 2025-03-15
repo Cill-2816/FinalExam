@@ -179,11 +179,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Hàm debug để xem danh sách users
-function showUsers() {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    console.log('Danh sách users:', users);
-}
-
-// Trong console của DevTools
-showUsers();
