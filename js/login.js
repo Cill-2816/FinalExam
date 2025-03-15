@@ -59,6 +59,20 @@ function checkLoginStatus() {
     }
 }
 
+// Thêm event listener khi trang load
+document.addEventListener('DOMContentLoaded', () => {
+    // Kiểm tra trạng thái đăng nhập
+    checkLoginStatus();
+
+    // Thêm event listener cho form đăng nhập
+    const loginForm = document.querySelector('.form-box.login form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+    }
+});
+
+
+
 // Thêm hàm gửi email mật khẩu
 async function sendPasswordEmail(userEmail, userName, password) {
     try {
@@ -139,3 +153,5 @@ document.querySelector('a[href="#"]').addEventListener('click', async (e) => {
         alert('Email không tồn tại trong hệ thống!');
     }
 });
+
+// const loginBtn = document.querySelector('.login-btn');

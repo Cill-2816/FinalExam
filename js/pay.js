@@ -38,11 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     addressInput.value = userDetails.address || '';
                     addressInput.dataset.original = userDetails.address || '';
                 }
-                            // Nếu giá trị thay đổi, hiển thị cảnh báo
-                // Điền thông tin
-                if (nameInput) nameInput.value = userDetails.name || '';
-                if (phoneInput) phoneInput.value = userDetails.phone || '';
-                if (addressInput) addressInput.value = userDetails.address || '';
 
             }
         }
