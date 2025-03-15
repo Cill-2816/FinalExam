@@ -59,55 +59,6 @@ function checkLoginStatus() {
     }
 }
 
-// Hàm đăng xuất
-function logout() {
-    localStorage.removeItem('currentUser');
-    window.location.href = 'login.html';
-}
-
-// Thêm event listener khi trang load
-document.addEventListener('DOMContentLoaded', () => {
-    // Kiểm tra trạng thái đăng nhập
-    checkLoginStatus();
-
-    // Thêm event listener cho form đăng nhập
-    const loginForm = document.querySelector('.form-box.login form');
-    if (loginForm) {
-        loginForm.addEventListener('submit', handleLogin);
-    }
-
-    // Cập nhật UI dựa trên trạng thái đăng nhập
-    updateUI();
-});
-
-// Cập nhật UI dựa trên trạng thái đăng nhập
-function updateUI() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    
-    if (currentUser && currentUser.isLoggedIn) {
-        // Nếu đã đăng nhập, cập nhật UI tương ứng
-        const loginBtn = document.querySelector('.login-btn');
-        if (loginBtn) {
-            loginBtn.textContent = 'Đã đăng nhập';
-            loginBtn.disabled = true;
-        }
-
-        // Có thể thêm tên người dùng vào header
-        const userInfo = document.createElement('div');
-        userInfo.className = 'user-info';
-        userInfo.innerHTML = `
-            <span>Xin chào, ${currentUser.username}</span>
-            <button onclick="logout()" class="logout-btn">Đăng xuất</button>
-        `;
-
-        // Thêm vào header nếu cần
-        const header = document.querySelector('.HD');
-        if (header) {
-            header.appendChild(userInfo);
-        }
-    }
-}
-
 // Thêm hàm gửi email mật khẩu
 async function sendPasswordEmail(userEmail, userName, password) {
     try {
@@ -188,5 +139,3 @@ document.querySelector('a[href="#"]').addEventListener('click', async (e) => {
         alert('Email không tồn tại trong hệ thống!');
     }
 });
-
-// const loginBtn = document.querySelector('.login-btn');
