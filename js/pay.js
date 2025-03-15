@@ -74,8 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cập nhật hàm updateTotal
     function updateTotal(includeShipping) {
         const subtotal = parseFloat(subtotalAmount.textContent.replace(/[^\d]/g, '')) || 0;
-        // Chỉ tính phí ship nếu giỏ hàng không trống và đang ở chế độ giao hàng
-        const shippingFee = (!isCartEmpty() && includeShipping) ? 0 : 0;
+        const shippingFee = 0;
         const total = subtotal + shippingFee;
         totalAmount.textContent = `${total.toLocaleString()}đ`;
     }
@@ -145,10 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
             totalAmount.textContent = '0đ';
             return; // Thoát khỏi hàm vì không cần tính toán thêm
         }
-
-        // Nếu giỏ hàng không trống, kiểm tra phương thức hiện tại để tính phí ship
-        const isDelivery = document.querySelector('.option-btn.active').dataset.option === 'delivery';
-        updateTotal(isDelivery);
     }
 
     // Thêm vào phần đầu file, sau các khai báo const
