@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         });
-
         subtotalAmount.textContent = `${subtotal.toLocaleString()}đ`;
         
         // Kiểm tra giỏ hàng trống và cập nhật UI
@@ -144,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalAmount.textContent = '0đ';
             return; // Thoát khỏi hàm vì không cần tính toán thêm
         }
+        updateTotal(true);
     }
 
     // Thêm vào phần đầu file, sau các khai báo const
