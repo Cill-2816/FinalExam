@@ -150,7 +150,7 @@ style.textContent = `
     }
 
     .username {
-        font-size: 16px;
+        font-size: 18px;
         color: var(--text-color);
         font-weight: bold;
         font-family: "Bookman",sans-serif;
