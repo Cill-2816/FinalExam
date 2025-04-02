@@ -94,32 +94,6 @@
     transform: scale(1.05);
 }
 
-/* Style cho giỏ hàng */
-.Cart {
-    margin-right: 20px;
-}
-
-.cart-icon {
-    color: var(--text-color);
-    font-size: 20px;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-}
-
-.cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #ff4444;
-    color: white;
-    font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 50%;
-    min-width: 15px;
-    text-align: center;
-}
-
 /* Style cho nút điều khiển số lượng */
 .order-controls {
     display: flex;
