@@ -89,25 +89,26 @@
 }
 
 .TotalLeft {
-    width: 80%;
+    width: 75%;
     float: left;
 }
 
 .TotalRight {
     float: left;
-    width: 20%;
+    width: 25%;
 }
 
 .Ga {
     top: 70%;
     width: 14%;
-    margin-left: 6%;
+    margin-left: 9%;
     position: fixed;      
 }
 
 .Left {
     width: 100%;
     float: left;
+    margin-top: 0.9%;
 }
 
 .Left p {
@@ -416,7 +417,7 @@ html {
     float: left;
 }
 .GaRan {
-    width: 100%;
+    width: 90%;
 }
 .GaRanIMG {
     width: 100%;
@@ -442,14 +443,11 @@ html {
         display: inline-block;
     }
 
-    .TotalRight img:nth-child(4) {
-        display: inline-block;
-    }
 }
 
 @media (max-width: 912px) {
 
-    .TotalRight img:nth-child(5) {
+    .TotalRight img:nth-child(4) {
         display: inline-block;
     }
     .GaRanIMG {
@@ -871,7 +869,6 @@ html {
         font-size: 22px;
     }
 
-    /* Tăng kích thước profile dropdown thêm nữa */
     .profile-dropdown {
         width: 350px;
         padding: 25px;
@@ -886,7 +883,6 @@ html {
         font-size: 24px;
     }
 
-    /* Tăng kích thước bottom section */
     .Bottom {
         padding: 3% 7%;
         gap: 50px;
